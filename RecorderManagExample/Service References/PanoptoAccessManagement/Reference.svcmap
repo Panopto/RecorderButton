@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="4d4f3070-ec03-4290-b46a-071bf63597f8" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://testing.panopto.com/Panopto/PublicAPI/4.2/AccessManagement.svc?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="AccessManagement.xsd" MetadataType="Schema" ID="8036c6de-9222-4166-9a66-b1daaa1928cb" SourceId="1" SourceUrl="https://testing.panopto.com/Panopto/PublicAPISSL/4.2/AccessManagement.svc?xsd=xsd2" />
+    <MetadataFile FileName="AccessManagement1.xsd" MetadataType="Schema" ID="2de6c1f7-c5e4-482e-8022-5e664870c1b4" SourceId="1" SourceUrl="https://testing.panopto.com/Panopto/PublicAPISSL/4.2/AccessManagement.svc?xsd=xsd3" />
+    <MetadataFile FileName="AccessManagement2.xsd" MetadataType="Schema" ID="bdf22cd1-e31d-4cc3-914d-58f548cc3d75" SourceId="1" SourceUrl="https://testing.panopto.com/Panopto/PublicAPISSL/4.2/AccessManagement.svc?xsd=xsd0" />
+    <MetadataFile FileName="AccessManagement3.xsd" MetadataType="Schema" ID="d73ff8a4-4cc0-43a7-a8b0-257c1f92256b" SourceId="1" SourceUrl="https://testing.panopto.com/Panopto/PublicAPISSL/4.2/AccessManagement.svc?xsd=xsd1" />
+    <MetadataFile FileName="AccessManagement.wsdl" MetadataType="Wsdl" ID="c8d3e9ef-681d-4883-b032-ff64a0019394" SourceId="1" SourceUrl="https://testing.panopto.com/Panopto/PublicAPI/4.2/AccessManagement.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
