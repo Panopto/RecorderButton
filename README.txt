@@ -1,0 +1,2 @@
+This is an example of how to start and stop a Panopto remote recorder on demand with our API. You could hook this
+code up to a physical button in order to allow for immediate start / stop operations in the lecture room.
