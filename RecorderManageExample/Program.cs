@@ -92,6 +92,8 @@ namespace RecordingManagementExample
 
                 // Schedules a new recording session that will start at the current time.
                 sr = recorder.ScheduleRecording(authInfo, sessionName, folderId, false, DateTime.Now, DateTime.Now.AddMinutes(sessionLength), recorderSettings.ToArray());
+
+                Console.WriteLine("Recording started.");
             }
             catch (Exception e)
             {
