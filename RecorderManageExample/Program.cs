@@ -10,7 +10,7 @@ namespace RecordingManagementExample
     using System.Threading;
 
     /// <summary>
-    /// Starts and stops a recording session in a Panoto server.
+    /// Starts and stops a recording session in a Panopto server.
     /// </summary>
     internal class Program
     {
@@ -22,10 +22,10 @@ namespace RecordingManagementExample
         static string newSessionName = "PanoptoNewSession";
 
         // The Id of the remote recorder that will record the new session
-        static Guid remoteRecorderId = Guid.Parse("5dc0864b-df08-4620-9f85-000000000");
+        static Guid remoteRecorderId = Guid.Parse("5dc0864b-df08-4620-9f85-000000000000");
 
-        // The id of the Panopto server foldr where the new session will be saved.
-        static Guid panoptoFolderId = Guid.Parse("3e127927-839a-4f0b-a461-000000000");
+        // The id of the Panopto server folder where the new session will be saved.
+        static Guid panoptoFolderId = Guid.Parse("3e127927-839a-4f0b-a461-000000000000");
 
         private static void Main(string[] args)
         {
@@ -41,16 +41,20 @@ namespace RecordingManagementExample
 
             Console.WriteLine("Starting a new recording for recorder with ID: " + remoteRecorderId);
             Console.WriteLine("Recording in folder with ID: " + panoptoFolderId);
+            Console.WriteLine("-- Press Enter to begin recording. --");
+            Console.ReadLine();
 
             // The new session recording will start when this line is executed.
-            RecorderManagement.ScheduledRecordingResult result = StartRecordingSession(recorder, authInfo, 60, newSessionName, panoptoFolderId , remoteRecorderId);
+            // Use 120 minutes as a default session length so we will record the first 2 hours.
+            int sessionLengthInMinutes = 120;
+            RecorderManagement.ScheduledRecordingResult result = StartRecordingSession(recorder, authInfo, sessionLengthInMinutes, newSessionName, panoptoFolderId, remoteRecorderId);
 
             // Only try to stop the session if we successfully started it.
             if (result != null
                 && result.SessionIDs != null)
             {
-                // The execution will wait some time just for test aim.
-                Thread.Sleep(5000);
+                Console.WriteLine("-- Press Enter to end recording. --");
+                Console.ReadLine();
 
                 // The session recording will be stoped when this line is executed. 
                 RecorderManagement.ScheduledRecordingResult stopResult = StopSessionRecording(recorder, authInfo, result.SessionIDs[0]);
@@ -65,20 +69,20 @@ namespace RecordingManagementExample
         }
 
         /// <summary>
-        /// Stars a new recording session.
+        /// Starts a new recording session.
         /// </summary>
         /// <param name="recorder">Recorder Client to schedule the new session.</param>
-        /// <param name="authInfo">Panopto user Authenticaion info.</param>
+        /// <param name="authInfo">Panopto user Authentication info.</param>
         /// <param name="sessionLength">The session duration in minutes.</param>
         /// <param name="sessionName">The new session name.</param>
-        /// <param name="folderId">The id os the folder where the new session will be located.</param>
+        /// <param name="folderId">The id of the folder where the new session will be located.</param>
         /// <param name="recorderId">The id of the remote recorder that will be used to record the new session.</param>
         /// <returns>Returns the schedule result.</returns>
         private static RecorderManagement.ScheduledRecordingResult StartRecordingSession(RecorderManagement.RemoteRecorderManagementClient recorder, RecorderManagement.AuthenticationInfo authInfo, int sessionLength, string sessionName, Guid folderId, Guid recorderId)
         {
             // Creates the recording settings list
             List<RecorderManagement.RecorderSettings> recorderSettings = new List<RecorderSettings>();
-            RecorderManagement.ScheduledRecordingResult sr = new ScheduledRecordingResult();
+            RecorderManagement.ScheduledRecordingResult sr = null;
             try
             {
                 Console.WriteLine("Starting recording.");
@@ -102,7 +106,7 @@ namespace RecordingManagementExample
         /// </summary>
         /// <param name="recorder">Recorder Client that is executing the session.</param>
         /// <param name="authInfo">Panopto user Authenticaion info.</param>
-        /// <param name="sessionId">The session to be stoped.</param>
+        /// <param name="sessionId">The session to be stopped.</param>
         /// <returns>Returns the schedule result.</returns>
         private static RecorderManagement.ScheduledRecordingResult StopSessionRecording(RecorderManagement.RemoteRecorderManagementClient recorder, RecorderManagement.AuthenticationInfo authInfo, Guid sessionId)
         {

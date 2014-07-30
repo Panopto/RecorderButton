@@ -1,6 +1,0 @@
-C:\src\Panopto\Active\Panopto\External\RecorderButton\RecorderManagExample\bin\Debug\RecordingManagementExample.exe.config
-C:\src\Panopto\Active\Panopto\External\RecorderButton\RecorderManagExample\bin\Debug\RecordingManagementExample.exe
-C:\src\Panopto\Active\Panopto\External\RecorderButton\RecorderManagExample\bin\Debug\RecordingManagementExample.pdb
-C:\src\Panopto\Active\Panopto\External\RecorderButton\RecorderManagExample\obj\Debug\RecorderManageExample.csprojResolveAssemblyReference.cache
-C:\src\Panopto\Active\Panopto\External\RecorderButton\RecorderManagExample\obj\Debug\RecordingManagementExample.exe
-C:\src\Panopto\Active\Panopto\External\RecorderButton\RecorderManagExample\obj\Debug\RecordingManagementExample.pdb

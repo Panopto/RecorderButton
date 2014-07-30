@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecorderManageExample", "RecorderManagExample\RecorderManageExample.csproj", "{01E86E42-2E00-4077-806D-AEDDF8317F62}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecorderManageExample", "RecorderManageExample\RecorderManageExample.csproj", "{01E86E42-2E00-4077-806D-AEDDF8317F62}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
